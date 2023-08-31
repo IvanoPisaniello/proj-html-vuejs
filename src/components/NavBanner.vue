@@ -11,13 +11,15 @@ export default {
             <div class="row">
                 <div class="col-6">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-5">
                             <div class="update  ps-5 text-center d-flex justify-content-between align-items-center">
-                                <h5 class="text-white">NEWS UPDATES</h5>
+                                <strong>
+                                    <p class="text-white pt-3">NEWS UPDATES</p>
+                                </strong>
                                 <img src="../assets/meal-time-150x150.webp" alt="">
                             </div>
                         </div>
-                        <div class="col-6 d-flex justify-content-between pt-1 text-light">
+                        <div class="col-7 d-flex  pt-1 text-light gap-2">
                             <p>5:32</p>
                             <p>IGIENIC RECEIP TO PREPARE RICE</p>
                         </div>
@@ -79,6 +81,8 @@ export default {
     button {
         height: 32px;
         width: 32px;
+
+
     }
 
 }
