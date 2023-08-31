@@ -1,9 +1,13 @@
 <script>
-import NavBanner from "./NavBanner.vue"
+import NavBanner from "./NavBanner.vue";
+import Navbar from "./Navbar.vue";
 export default {
     components: {
         NavBanner,
-    }
+        Navbar,
+    },
+
+
 
 }
 
@@ -24,6 +28,7 @@ export default {
             </div>
         </div>
     </div>
+    <Navbar></Navbar>
 </template>
 
 <style lang="scss" scoped>

@@ -12,7 +12,9 @@ export default {
 </script>
 
 <template>
-    <TheHeader></TheHeader>
+    <header>
+        <TheHeader></TheHeader>
+    </header>
 </template>
 
 <style ></style>
