@@ -1,68 +1,19 @@
 <script>
 import TagFashion from "../components/TagFashion.vue";
 import TagFood from "../components/TagFood.vue";
+import LifeStyle from "../components/LifeStyle.vue"
+import { store } from "../store.js";
 export default {
     components: {
         TagFashion,
         TagFood,
+        LifeStyle,
     },
     data() {
         return {
-
+            store,
             activeIndex: 0,
-            cards: [
-                {
-                    src: 'src/assets/healthy-foods.webp',
-                    titolo: "The Best Healty foods in 2022",
-                    date: "december 26, 2022"
-                },
-                {
-                    src: 'src/assets/winter.webp',
-                    titolo: "The Best The Best Winter Outfit",
-                    date: "december 26, 2022",
-                },
-                {
-                    src: 'src/assets/photographers-mistakes.webp',
-                    titolo: "Beginner Photographer's Mistakes",
-                    date: "december 26, 2022"
-                },
-                {
-                    src: 'src/assets/anime-fashion.webp',
-                    titolo: "Fashion Trend Now A Days",
-                    date: "december 26, 2022"
-                },
-                {
-                    src: 'src/assets/rice-ball.webp',
-                    titolo: "Igienic Receipe To Prepare Rice",
-                    date: "december 26, 2022"
-                },
-                {
-                    src: 'src/assets/success-story.webp',
-                    titolo: "The Best Success Stories",
-                    date: "december 26, 2022"
-                },
-                {
-                    src: 'src/assets/anime-fashion.webp',
-                    titolo: "Fashion Trend Now A Days",
-                    date: "december 26, 2022"
-                },
-                {
-                    src: 'src/assets/rice-ball.webp',
-                    titolo: "Igienic Receipe To Prepare Rice",
-                    date: "december 26, 2022"
-                },
-                {
-                    src: 'src/assets/anime-fashion.webp',
-                    titolo: "The Best Success Stories",
-                    date: "december 26, 2022"
-                },
-                {
-                    src: 'src/assets/success-story.webp',
-                    titolo: "The Best Success Stories",
-                    date: "december 26, 2022"
-                },
 
-            ]
         }
     },
     methods: {
@@ -70,12 +21,12 @@ export default {
             if (this.activeIndex > 0) {
                 this.activeIndex--;
             } else {
-                this.activeIndex = this.cards.length - 1; // Ritorna all'ultimo elemento quando si è alla prima
+                this.activeIndex = this.store.cards.length - 4; // Ritorna all'ultimo elemento quando si è alla prima
             }
         },
 
         nextSlide() {
-            if (this.activeIndex < this.cards.length - 4) { // meno quattro perchè così rimangono sempre 4 all'ultima tornata del carousel
+            if (this.activeIndex < this.store.cards.length - 4) { // meno quattro perchè così rimangono sempre 4 all'ultima tornata del carousel
                 this.activeIndex++;
             } else {
                 this.activeIndex = 0; // Torna al primo elemento quando si raggiunge l'ultimo
@@ -112,17 +63,28 @@ export default {
 <template>
     <div class="slider-container">
         <div class="slider">
-            <div class="slider-container d-flex justify-content-center pt-5 gap-2 p-3">
+            <div class="slider-container d-flex justify-content-center pt-5 gap-5 p-3">
                 <!-- se modififico index < activeIndex + 4 modifico anche il numero di card sempre attive -->
-                <div class="card slide border-0" v-for="(card, index) in  cards "
+                <div class="card slide border-0" v-for="(card, index) in  store.cards "
                     v-show="index >= activeIndex && index < activeIndex + 4">
                     <img :src="card.src" class="card-img-top" alt="...">
-                    <div class="tag-fashion" v-if="card.titolo === 'Fashion Trend Now A Days'">
+                    <div class="tag-fashion"
+                        v-if="card.titolo === 'Fashion Trend Now A Days' || card.titolo === 'The Best Success Stories' || card.titolo === 'Beginner Photographer\'s Mistakes'">
                         <TagFashion></TagFashion>
 
                     </div>
-                    <div class="tag-food" v-if="card.titolo === 'The Best Healty foods in 2022'">
+                    <div class="tag-food"
+                        v-if="card.titolo === 'The Best Healty foods in 2022' || card.titolo === 'The Best Time To Have A Meal' || card.titolo === 'Igienic Receipe To Prepare Rice'">
                         <TagFood></TagFood>
+                    </div>
+                    <div class="tag-lifestyle"
+                        v-if="card.titolo === 'The Best Winter Outfit' || card.titolo === 'Places For A Road Trip' || card.titolo === 'Music The Love Of My Life'">
+                        <div class="life-fashion d-flex gap-1">
+                            <LifeStyle></LifeStyle>
+
+
+                            <TagFashion></TagFashion>
+                        </div>
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ card.titolo }}</h5>
@@ -154,8 +116,9 @@ export default {
 
     }
 
-    .card {
-        width: 400px
+    .card-body {
+        width: 350px;
+        background-color: white;
     }
 
     .btn {
@@ -186,6 +149,14 @@ export default {
         left: 40%;
 
     }
+
+    .tag-lifestyle {
+        position: absolute;
+        top: 5%;
+        left: 20%;
+
+    }
+
 
 
 }
