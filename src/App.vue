@@ -1,11 +1,13 @@
 <script>
 import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
+import Hero from "./components/Hero.vue";
 
 export default {
     components: {
         TheHeader,
         TheFooter,
+        Hero,
     }
 
 }
@@ -14,6 +16,8 @@ export default {
 <template>
     <header>
         <TheHeader></TheHeader>
+        <Hero></Hero>
+
     </header>
 </template>
 

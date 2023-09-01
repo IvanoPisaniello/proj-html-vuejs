@@ -32,20 +32,16 @@ export default {
                     name: "CONTACT US",
                     icon: 'fa-solid fa-envelope'
                 },
+            ],
 
-
-
-
-
-
-            ]
         }
-    }
+    },
+
 }
 </script>
 
 <template>
-    <div class="my-nav">
+    <div class="my-nav ">
         <div class="container">
             <div class="row">
                 <div class="col-2">
@@ -53,7 +49,7 @@ export default {
                 </div>
                 <div class="col-8">
                     <div>
-                        <ul class="d-flex justify-content-center gap-4">
+                        <ul class="d-flex justify-content-center align-items-center gap-4">
                             <li v-for="link in links" class="list-unstyled">
                                 <button class="btn">
                                     <a href="" class=""><i :class="link.icon"></i>
@@ -83,5 +79,18 @@ a:hover {
 
 .my-nav {
     border-bottom: .5px solid grey;
+}
+
+
+@media (min-width: 768px) {
+    .carousel-inner {
+        display: flex;
+    }
+
+    .carousel-item {
+        margin-right: 0;
+        flex: 0 0 33.333333%;
+        display: block;
+    }
 }
 </style>
