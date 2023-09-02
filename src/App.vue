@@ -6,7 +6,8 @@ import MainCardSection from "./components/MainCardSection.vue"
 import LifestyleStories from "./components/LifestyleStories.vue";
 import Banner from "./components/Banner.vue"
 import SecondSlider from "./components/SecondSlider.vue";
-
+import YouTube from "./components/YouTube.vue";
+import ContainerCards from "./components/ContainerCards.vue";
 
 export default {
     components: {
@@ -17,6 +18,8 @@ export default {
         LifestyleStories,
         Banner,
         SecondSlider,
+        YouTube,
+        ContainerCards,
     }
 
 }
@@ -33,6 +36,8 @@ export default {
 
         <Banner></Banner>
         <SecondSlider></SecondSlider>
+        <YouTube></YouTube>
+        <ContainerCards></ContainerCards>
 
     </header>
 </template>

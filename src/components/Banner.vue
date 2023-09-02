@@ -6,7 +6,7 @@ export default {
 
 <template>
     <div class="text-center py-4">
-        <img src="../assets/page-banner-1.webp" alt="" class="img">
+        <img src="../assets/page-banner-1.webp" alt="" class="img rounded-1">
     </div>
 </template>
 

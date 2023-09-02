@@ -6,7 +6,7 @@ export default {
 
 <template>
     <div>
-        <button class=" bg-white rounded-3 border-0">
+        <button class=" bg-white rounded-2 border-0">
             <strong>
                 <p>CULTURE</p>
             </strong>

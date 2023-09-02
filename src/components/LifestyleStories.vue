@@ -109,8 +109,11 @@ export default {
     height: 470px;
     filter: brightness(50%);
 
+
     &:hover {
         filter: brightness(1);
+
+
     }
 }
 

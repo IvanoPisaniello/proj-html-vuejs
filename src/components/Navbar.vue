@@ -50,7 +50,7 @@ export default {
                 <div class="col-8">
                     <div>
                         <ul class="d-flex justify-content-center align-items-center gap-4">
-                            <li v-for="link in links" class="list-unstyled">
+                            <li v-for="link in links" class="list-unstyled pt-2">
                                 <button class="btn">
                                     <a href="" class=""><i :class="link.icon"></i>
                                         {{ link.name }}</a>
