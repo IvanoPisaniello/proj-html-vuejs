@@ -37,7 +37,8 @@ export default {
 
 </script>
 
-
+<!-- inserisco le immagini con un v-for in modo dinamico, prendendo i dati dallo store, e selezionando solo quelle che mi servono, inoltre ho creato componenti di ogni tag in modo da poter
+essere riutilizzati, e li differenzio con una condizione -->
 <template>
     <div class="container px-5">
         <div class="row">
@@ -48,6 +49,16 @@ export default {
 
                             <div class="demo-data">
                                 <img :src="card.src" alt="">
+                                <div class="tag d-flex justify-content-center gap-2"
+                                    v-if="card.titolo === 'Fashion Trend Now A Days'">
+                                    <TagFashion></TagFashion>
+                                    <LifeStyle></LifeStyle>
+                                </div>
+                                <div class="tag d-flex justify-content-center gap-2"
+                                    v-if="card.titolo === 'Traveling Alone Is Awesome'">
+                                    <TagStories></TagStories>
+                                    <TagTravel></TagTravel>
+                                </div>
                                 <div class="demo-position text-center">
                                     <DemoData></DemoData>
                                     <h5>{{ card.titolo }}</h5>
@@ -60,6 +71,12 @@ export default {
                         <div v-for="(card, index) in [store.cards[6]]">
                             <div class="demo-data">
                                 <img :src="card.src" alt="" class="central-img">
+                                <div class="tag d-flex justify-content-center gap-2 ms-5"
+                                    v-if="card.titolo === 'Places For A Road Trip'">
+                                    <LifeStyle></LifeStyle>
+                                    <TagStories></TagStories>
+                                    <TagTravel></TagTravel>
+                                </div>
                                 <div class="demo-position-central text-center">
                                     <DemoData></DemoData>
                                     <h5>{{ card.titolo }}</h5>
@@ -74,6 +91,16 @@ export default {
 
                             <div class="demo-data">
                                 <img :src="card.src" alt="">
+                                <div class="tag d-flex justify-content-center gap-2"
+                                    v-if="card.titolo === 'Music The Love Of My Life'">
+                                    <TagCulture></TagCulture>
+                                    <LifeStyle></LifeStyle>
+                                </div>
+                                <div class="tag d-flex justify-content-center gap-2"
+                                    v-if="card.titolo === 'Reason To Visit France'">
+                                    <LifeStyle></LifeStyle>
+                                    <TagTravel></TagTravel>
+                                </div>
                                 <div class="demo-position text-center">
                                     <DemoData></DemoData>
                                     <h5>{{ card.titolo }}</h5>
@@ -98,7 +125,7 @@ img {
 
 
     &:hover {
-        filter: brightness(1.2);
+        filter: brightness(1);
     }
 }
 
@@ -127,5 +154,11 @@ img {
     bottom: 0;
     color: white;
     left: 30%;
+}
+
+.tag {
+    position: absolute;
+    top: 10px;
+    left: 20%;
 }
 </style>

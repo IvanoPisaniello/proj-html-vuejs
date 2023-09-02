@@ -3,6 +3,7 @@ import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
 import Hero from "./components/Hero.vue";
 import MainCardSection from "./components/MainCardSection.vue"
+import LifestyleStories from "./components/LifestyleStories.vue";
 
 
 export default {
@@ -11,6 +12,7 @@ export default {
         TheFooter,
         Hero,
         MainCardSection,
+        LifestyleStories,
     }
 
 }
@@ -20,9 +22,10 @@ export default {
     <header>
         <TheHeader></TheHeader>
         <Hero></Hero>
-        <div class="mt-5">
+        <div class="my-5">
             <MainCardSection></MainCardSection>
         </div>
+        <LifestyleStories></LifestyleStories>
 
     </header>
 </template>
