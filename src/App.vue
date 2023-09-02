@@ -4,6 +4,8 @@ import TheFooter from "./components/TheFooter.vue";
 import Hero from "./components/Hero.vue";
 import MainCardSection from "./components/MainCardSection.vue"
 import LifestyleStories from "./components/LifestyleStories.vue";
+import Banner from "./components/Banner.vue"
+import SecondSlider from "./components/SecondSlider.vue";
 
 
 export default {
@@ -13,6 +15,8 @@ export default {
         Hero,
         MainCardSection,
         LifestyleStories,
+        Banner,
+        SecondSlider,
     }
 
 }
@@ -26,6 +30,9 @@ export default {
             <MainCardSection></MainCardSection>
         </div>
         <LifestyleStories></LifestyleStories>
+
+        <Banner></Banner>
+        <SecondSlider></SecondSlider>
 
     </header>
 </template>

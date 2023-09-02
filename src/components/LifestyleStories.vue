@@ -37,7 +37,7 @@ export default {
 </script>
 
 <template>
-    <div class="container px-3">
+    <div class="container px-5">
         <div class="row ">
             <div class="col-7 position-relative">
                 <strong>
@@ -75,7 +75,7 @@ export default {
                 </div>
                 <div v-for=" ( card, index ) in  [store.cards[8], store.cards[3], store.cards[6]] ">
 
-                    <div class="demo-data d-flex gap-1 mb-4 position-relative">
+                    <div class="demo-data d-flex gap-1 mb-2 position-relative">
                         <img :src="card.src" alt="" class="img-right rounded-3">
                         <div class="tag-right d-flex justify-content-center gap-2"
                             v-if="card.titolo === 'Traveling Alone Is Awesome'">
@@ -106,7 +106,7 @@ export default {
 
 <style lang="scss" scoped>
 .central-img {
-    height: 500px;
+    height: 470px;
     filter: brightness(50%);
 
     &:hover {
