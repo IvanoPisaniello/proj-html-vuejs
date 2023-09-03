@@ -33,19 +33,42 @@ export default {
 
 <style lang="scss" scoped>
 .imgs-row {
-    width: 100%;
-    height: 180px;
-    position: relative;
+    width: 280px;
+    height: auto;
     filter: brightness(50%);
+    transform: translate3d(-70px, 0, 0);
+    max-width: none;
+    display: block;
 
-    &:hover {
-        margin-left: 20px;
-    }
+
+
+
+
 
 
 
 }
 
+// .col-2 {
+//     max-width: 240px;
+//     position: relative;
+//     overflow: hidden;
+
+
+// }
+
+
+
+.my-card {
+    height: 100%;
+    max-width: 210px;
+    // max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+
+
+}
 
 
 .short-title {
@@ -76,5 +99,12 @@ export default {
 .my-card:hover>.overlay {
     opacity: 1;
     transition: all .5s linear;
+    // transform: translate3d(20px, 0, 0);
+
+}
+
+.my-card:hover>.imgs-row {
+    transform: translate3d(-40px, 0, 0);
+    transition: transform .2s;
 }
 </style>
