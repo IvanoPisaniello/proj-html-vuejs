@@ -1,11 +1,17 @@
 <script>
 import OffCanvas from "./OffCanvas.vue"
+import { store } from "../store.js";
+
 export default {
     components: {
         OffCanvas,
     },
     data() {
         return {
+            store,
+            firstShow: false,
+            secondShow: false,
+            dropDown: false,
             links: [
 
                 {
@@ -18,7 +24,8 @@ export default {
                 },
                 {
                     name: "LIFESTILES",
-                    icon: 'fa-solid fa-suitcase'
+                    icon: 'fa-solid fa-suitcase',
+                    hover: true,
                 },
                 {
                     name: "STORIES",
@@ -37,6 +44,28 @@ export default {
         }
     },
 
+    methods: {
+        firstOnHover() {
+            this.firstShow = true;
+        },
+        resetFirstShow() {
+            this.firstShow = false;
+        },
+        secondOnHover() {
+            this.secondShow = true;
+        },
+        resetSecondShow() {
+            this.secondShow = false;
+        }, pagesOver() {
+            this.dropDown = true;
+        },
+        resetPages() {
+            this.dropDown = false;
+        },
+
+
+    }
+
 }
 </script>
 
@@ -49,9 +78,12 @@ export default {
                 </div>
                 <div class="col-8">
                     <div>
+                        <!-- sto facendo delle condizioni per beccare gli elementi dinamici e farli visualizzare solo all'hover -->
                         <ul class="d-flex justify-content-center align-items-center gap-4">
                             <li v-for="link in links" class="list-unstyled pt-2">
-                                <button class="btn">
+                                <button class="btn" type="button"
+                                    @mouseover="link.name === 'LIFESTILES' ? firstOnHover() : (link.name === 'STORIES' ? secondOnHover() : (link.name === 'PAGES' ? pagesOver() : ''))"
+                                    @mouseleave="link.name === 'LIFESTILES' ? resetFirstShow() : (link.name === 'STORIES' ? resetSecondShow() : (link.name === 'PAGES' ? resetPages() : ''))">
                                     <a href="" class=""><i :class="link.icon"></i>
                                         {{ link.name }}</a>
                                 </button>
@@ -62,6 +94,33 @@ export default {
                 <div class="col-2 fs-2 text-secondary d-flex justify-content-end p-2">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
+            </div>
+            <div class="row d--flex justify-content-center drop-down-img-one" v-if="firstShow === true">
+                <div class="card text-start d-inline-flex "
+                    v-for="(card, index) in [store.cards[2], store.cards[5], store.cards[7], store.cards[9]]">
+                    <img class="card-img-top" :src="card.src" alt="Title">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ card.titolo }}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row d--flex justify-content-center drop-down-img-second" v-if="secondShow === true">
+                <div class="card text-start d-inline-flex "
+                    v-for="(card, index) in [store.cards[3], store.cards[6], store.cards[10], store.cards[1]]">
+                    <img class="card-img-top" :src="card.src" alt="Title">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ card.titolo }}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown" v-if="dropDown === true">
+                <ul class="list-unstyled">
+                    <li class="">Search Results</li>
+                    <li class="">Category Archive</li>
+                    <li class="">Autor Archive</li>
+                    <li class="">Date Archive</li>
+                    <li class="">Error 404</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -82,15 +141,33 @@ a:hover {
 }
 
 
-@media (min-width: 768px) {
-    .carousel-inner {
-        display: flex;
-    }
+.card-img-top {
+    width: 300px;
+    height: 200px;
+}
 
-    .carousel-item {
-        margin-right: 0;
-        flex: 0 0 33.333333%;
-        display: block;
-    }
+.card {
+    width: 330px;
+}
+
+.drop-down-img-one {
+    position: fixed;
+    z-index: 999;
+
+}
+
+.drop-down-img-second {
+    position: fixed;
+    z-index: 999;
+
+}
+
+.dropdown {
+    position: absolute;
+    left: 60%;
+    z-index: 999;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
 }
 </style>

@@ -28,18 +28,24 @@ export default {
 <template>
     <header>
         <TheHeader></TheHeader>
-        <Hero></Hero>
-        <div class="my-5">
-            <MainCardSection></MainCardSection>
-        </div>
-        <LifestyleStories></LifestyleStories>
-
-        <Banner></Banner>
-        <SecondSlider></SecondSlider>
-        <YouTube></YouTube>
-        <ContainerCards></ContainerCards>
-
     </header>
+    <Hero></Hero>
+    <div class="my-5">
+        <MainCardSection></MainCardSection>
+    </div>
+    <LifestyleStories></LifestyleStories>
+
+    <Banner></Banner>
+    <SecondSlider></SecondSlider>
+    <YouTube></YouTube>
+    <ContainerCards></ContainerCards>
+    <footer>
+        <TheFooter></TheFooter>
+    </footer>
 </template>
 
-<style ></style>
+<style>
+body {
+    font-family: sans-serif;
+}
+</style>

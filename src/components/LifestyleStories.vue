@@ -39,11 +39,28 @@ export default {
 <template>
     <div class="container px-5">
         <div class="row ">
+            <strong>
+                <h5> LIFESTYLE & STORIES</h5>
+            </strong>
+            <div class="d-flex py-1 gap-2 justify-content-end">
+                <button class=" bg-secondary rounded-3 border-0 text-white">
+
+                    <p>ALL</p>
+
+                </button><button class=" bg-secondary rounded-3 border-0 text-white">
+
+                    <p>LIFESTYLE</p>
+
+                </button><button class=" bg-secondary rounded-3 border-0 text-white">
+
+                    <p>STORIES</p>
+
+                </button>
+            </div>
+
             <div class="col-7 position-relative">
-                <strong>
-                    <h5> LIFESTYLE & STORIES</h5>
-                </strong>
-                <div v-for="(card, index) in [store.cards[5]]" class="mt-3">
+
+                <div v-for="(card, index) in [store.cards[5]]" class="mt-0">
                     <div class="demo-data">
                         <img :src="card.src" alt="" class="central-img rounded-3">
                         <div class="tag d-flex gap-2 ms-5">
@@ -58,22 +75,9 @@ export default {
                 </div>
             </div>
             <div class="col-5">
-                <div class="d-flex py-1 gap-2 justify-content-end">
-                    <button class=" bg-secondary rounded-3 border-0 text-white">
 
-                        <p>ALL</p>
 
-                    </button><button class=" bg-secondary rounded-3 border-0 text-white">
-
-                        <p>LIFESTYLE</p>
-
-                    </button><button class=" bg-secondary rounded-3 border-0 text-white">
-
-                        <p>STORIES</p>
-
-                    </button>
-                </div>
-                <div v-for=" ( card, index ) in  [store.cards[8], store.cards[3], store.cards[6]] ">
+                <div v-for=" ( card, index ) in  [store.cards[8], store.cards[3], store.cards[6]] " class="">
 
                     <div class="demo-data d-flex gap-1 mb-2 position-relative">
                         <img :src="card.src" alt="" class="img-right rounded-3">

@@ -107,5 +107,34 @@ export const store = reactive({
             id: 7,
         },
 
-    ]
+    ],
+
+    getStartedLinks: [
+        { name: "Resources" },
+        { name: "Tutorials" },
+        { name: "Examples" },
+        { name: "Docs" },
+
+    ],
+    aboutLinks: [
+        { name: "Stories" },
+        { name: "Community" },
+        { name: "Blog" },
+        { name: "Brand Assets" },
+
+    ],
+    featuresLinks: [
+        { name: "Overview" },
+        { name: "Design" },
+        { name: "Code" },
+        { name: "Collaborate" },
+
+    ],
+    quickLinks: [
+        { name: "Stories" },
+        { name: "Community" },
+        { name: "Blog" },
+        { name: "Brand Assets" },
+
+    ],
 })
