@@ -79,7 +79,7 @@ export default {
                 <div class="col-8">
                     <div>
                         <!-- sto facendo delle condizioni per beccare gli elementi dinamici e farli visualizzare solo all'hover -->
-                        <ul class="d-flex justify-content-center align-items-center gap-4">
+                        <ul class="d-flex justify-content-center align-items-center gap-3">
                             <li v-for="link in links" class="list-unstyled pt-2">
                                 <button class="btn" type="button"
                                     @mouseover="link.name === 'LIFESTILES' ? firstOnHover() : (link.name === 'STORIES' ? secondOnHover() : (link.name === 'PAGES' ? pagesOver() : ''))"
