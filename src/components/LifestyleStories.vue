@@ -61,15 +61,15 @@ export default {
             <h5> LIFESTYLE & STORIES</h5>
         </strong>
         <div class="d-flex py-1 gap-2 justify-content-end">
-            <button class=" bg-secondary rounded-3 border-0 text-white" @click="onFirstClick">
+            <button class=" bg-secondary rounded-3 border-0 text-white p-1" @click="onFirstClick">
 
                 <p>ALL</p>
 
-            </button><button class=" bg-secondary rounded-3 border-0 text-white" @click="onSecondClick">
+            </button><button class=" bg-secondary rounded-3 border-0 text-white p-1" @click="onSecondClick">
 
                 <p>LIFESTYLE</p>
 
-            </button><button class=" bg-secondary rounded-3 border-0 text-white" @click="onThirdClick">
+            </button><button class=" bg-secondary rounded-3 border-0 text-white p-1" @click="onThirdClick">
 
                 <p>STORIES</p>
 
@@ -258,6 +258,8 @@ export default {
 
 button {
     height: 30px;
+
+
 
 
 }

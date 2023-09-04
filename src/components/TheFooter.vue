@@ -80,4 +80,8 @@ img {
     height: 60px;
     width: 200px;
 }
+
+li:hover {
+    color: #333333;
+}
 </style>
