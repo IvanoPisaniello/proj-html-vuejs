@@ -150,6 +150,7 @@ export default {
 
     .btn-right {
         margin-right: 50px;
+
     }
 
     .tag-fashion {

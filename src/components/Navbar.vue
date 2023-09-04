@@ -13,34 +13,6 @@ export default {
             secondShow: false,
             dropDown: false,
             overlay: false,
-            links: [
-
-                {
-                    name: "HOME",
-                    icon: 'fa-solid fa-house'
-                },
-                {
-                    name: "ABOUT US",
-                    icon: 'fa-solid fa-user'
-                },
-                {
-                    name: "LIFESTILES",
-                    icon: 'fa-solid fa-suitcase',
-                    hover: true,
-                },
-                {
-                    name: "STORIES",
-                    icon: 'fa-solid fa-book-open-reader'
-                },
-                {
-                    name: "PAGES",
-                    icon: 'fa-solid fa-book'
-                },
-                {
-                    name: "CONTACT US",
-                    icon: 'fa-solid fa-envelope'
-                },
-            ],
 
         }
     },
@@ -86,7 +58,7 @@ export default {
                     <div>
                         <!-- sto facendo delle condizioni per beccare gli elementi dinamici e farli visualizzare solo all'hover -->
                         <ul class="d-flex justify-content-center align-items-center gap-3">
-                            <li v-for="link in links" class="list-unstyled pt-2">
+                            <li v-for="link in store.links" class="list-unstyled pt-2">
                                 <button class="btn" type="button"
                                     @mouseover="link.name === 'LIFESTILES' ? firstOnHover() : (link.name === 'STORIES' ? secondOnHover() : (link.name === 'PAGES' ? pagesOver() : ''))"
                                     @mouseleave="link.name === 'LIFESTILES' ? resetFirstShow() : (link.name === 'STORIES' ? resetSecondShow() : (link.name === 'PAGES' ? resetPages() : ''))">
@@ -144,13 +116,15 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use "../styles/partials/variables" as *;
+
 a {
     color: black;
     text-decoration: none;
 }
 
 a:hover {
-    color: red;
+    color: $color-primary;
 }
 
 .my-nav {

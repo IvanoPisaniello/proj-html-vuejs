@@ -67,6 +67,34 @@ export const store = reactive({
         shortTitle: "LIFESTYLE",
     },
     ],
+    links: [
+
+        {
+            name: "HOME",
+            icon: 'fa-solid fa-house'
+        },
+        {
+            name: "ABOUT US",
+            icon: 'fa-solid fa-user'
+        },
+        {
+            name: "LIFESTILES",
+            icon: 'fa-solid fa-suitcase',
+            hover: true,
+        },
+        {
+            name: "STORIES",
+            icon: 'fa-solid fa-book-open-reader'
+        },
+        {
+            name: "PAGES",
+            icon: 'fa-solid fa-book'
+        },
+        {
+            name: "CONTACT US",
+            icon: 'fa-solid fa-envelope'
+        },
+    ],
 
     playlist: [
         {
