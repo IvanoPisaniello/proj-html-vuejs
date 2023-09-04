@@ -20,11 +20,29 @@ export default {
     data() {
         return {
             store,
-
+            firstCard: true,
+            secondCard: false,
+            thirdCard: false,
         }
 
     },
     methods: {
+        onFirstClick() {
+            this.firstCard = true;
+            this.secondCard = false;
+            this.thirdCard = false;
+        },
+        onSecondClick() {
+            this.firstCard = false;
+            this.secondCard = true;
+            this.thirdCard = false;
+        },
+
+        onThirdClick() {
+            this.firstCard = false;
+            this.secondCard = false;
+            this.thirdCard = true;
+        }
 
 
 
@@ -38,26 +56,26 @@ export default {
 
 <template>
     <div class="container px-5">
-        <div class="row ">
-            <strong>
-                <h5> LIFESTYLE & STORIES</h5>
-            </strong>
-            <div class="d-flex py-1 gap-2 justify-content-end">
-                <button class=" bg-secondary rounded-3 border-0 text-white">
 
-                    <p>ALL</p>
+        <strong>
+            <h5> LIFESTYLE & STORIES</h5>
+        </strong>
+        <div class="d-flex py-1 gap-2 justify-content-end">
+            <button class=" bg-secondary rounded-3 border-0 text-white" @click="onFirstClick">
 
-                </button><button class=" bg-secondary rounded-3 border-0 text-white">
+                <p>ALL</p>
 
-                    <p>LIFESTYLE</p>
+            </button><button class=" bg-secondary rounded-3 border-0 text-white" @click="onSecondClick">
 
-                </button><button class=" bg-secondary rounded-3 border-0 text-white">
+                <p>LIFESTYLE</p>
 
-                    <p>STORIES</p>
+            </button><button class=" bg-secondary rounded-3 border-0 text-white" @click="onThirdClick">
 
-                </button>
-            </div>
+                <p>STORIES</p>
 
+            </button>
+        </div>
+        <div class="row" v-if="firstCard === true">
             <div class="col-7 position-relative">
 
                 <div v-for="(card, index) in [store.cards[5]]" class="mt-0">
@@ -78,6 +96,100 @@ export default {
 
 
                 <div v-for=" ( card, index ) in  [store.cards[8], store.cards[3], store.cards[6]] " class="">
+
+                    <div class="demo-data d-flex gap-1 mb-2 position-relative">
+                        <img :src="card.src" alt="" class="img-right rounded-3">
+                        <div class="tag-right d-flex justify-content-center gap-2"
+                            v-if="card.titolo === 'Traveling Alone Is Awesome'">
+                            <TagStories></TagStories>
+
+
+                        </div>
+                        <div class="tag-right d-flex justify-content-center gap-2"
+                            v-if="card.titolo === 'Fashion Trend Now A Days'">
+                            <TagFashion></TagFashion>
+
+                        </div>
+                        <div class="tag-right d-flex justify-content-center gap-2"
+                            v-if="card.titolo === 'Places For A Road Trip'">
+                            <LifeStyle></LifeStyle>
+                        </div>
+                        <div class="demo-position text-center mt-5">
+                            <DemoData></DemoData>
+                            <h5>{{ card.titolo }}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" v-if="secondCard === true">
+            <div class="col-7 position-relative">
+
+                <div v-for="(card, index) in [store.cards[3]]" class="mt-0">
+                    <div class="demo-data">
+                        <img :src="card.src" alt="" class="central-img rounded-3">
+                        <div class="tag d-flex gap-2 ms-5">
+                            <TagCulture></TagCulture>
+                        </div>
+                        <div class="demo-left text-white">
+                            <DemoData></DemoData>
+                            <h5>{{ card.titolo }}</h5>
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+
+
+                <div v-for=" ( card, index ) in  [store.cards[5], store.cards[2], store.cards[1]] " class="">
+
+                    <div class="demo-data d-flex gap-1 mb-2 position-relative">
+                        <img :src="card.src" alt="" class="img-right rounded-3">
+                        <div class="tag-right d-flex justify-content-center gap-2"
+                            v-if="card.titolo === 'Traveling Alone Is Awesome'">
+                            <TagStories></TagStories>
+
+
+                        </div>
+                        <div class="tag-right d-flex justify-content-center gap-2"
+                            v-if="card.titolo === 'Fashion Trend Now A Days'">
+                            <TagFashion></TagFashion>
+
+                        </div>
+                        <div class="tag-right d-flex justify-content-center gap-2"
+                            v-if="card.titolo === 'Places For A Road Trip'">
+                            <LifeStyle></LifeStyle>
+                        </div>
+                        <div class="demo-position text-center mt-5">
+                            <DemoData></DemoData>
+                            <h5>{{ card.titolo }}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" v-if="thirdCard === true">
+            <div class="col-7 position-relative">
+
+                <div v-for="(card, index) in [store.cards[8]]" class="mt-0">
+                    <div class="demo-data">
+                        <img :src="card.src" alt="" class="central-img rounded-3">
+                        <div class="tag d-flex gap-2 ms-5">
+                            <TagCulture></TagCulture>
+                        </div>
+                        <div class="demo-left text-white">
+                            <DemoData></DemoData>
+                            <h5>{{ card.titolo }}</h5>
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+
+
+                <div v-for=" ( card, index ) in  [store.cards[1], store.cards[6], store.cards[10]] " class="">
 
                     <div class="demo-data d-flex gap-1 mb-2 position-relative">
                         <img :src="card.src" alt="" class="img-right rounded-3">
