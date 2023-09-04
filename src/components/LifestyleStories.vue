@@ -55,7 +55,7 @@ export default {
 </script>
 
 <template>
-    <div class="container px-5">
+    <div class="container px-5 mb-4">
 
         <strong>
             <h5> LIFESTYLE & STORIES</h5>
@@ -258,6 +258,8 @@ export default {
 
 button {
     height: 30px;
+
+
 }
 
 .tag-right {

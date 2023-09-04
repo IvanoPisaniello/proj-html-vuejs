@@ -12,6 +12,7 @@ export default {
             firstShow: false,
             secondShow: false,
             dropDown: false,
+            overlay: false,
             links: [
 
                 {
@@ -62,7 +63,12 @@ export default {
         resetPages() {
             this.dropDown = false;
         },
-
+        onGlassClick() {
+            this.overlay = true;
+        },
+        onQuitClick() {
+            this.overlay = false;
+        }
 
     }
 
@@ -92,7 +98,9 @@ export default {
                     </div>
                 </div>
                 <div class="col-2 fs-2 text-secondary d-flex justify-content-end p-2">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <button class="border-0 bg-transparent" @click="onGlassClick">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </div>
             </div>
             <div class="row d--flex justify-content-center drop-down-img-one" v-if="firstShow === true">
@@ -123,6 +131,15 @@ export default {
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="overlay d-flex justify-content-between align-items-center p-5" v-if="overlay === true">
+        <div class="mb-3">
+            <input type="" class=" bg-transparent p-2" id="" aria-describedby="emailHelp">
+
+        </div>
+        <button class="bg-transparent border-0" @click="onQuitClick">
+            <h2 class="btn-close text-white"><i class="fa-regular fa-rectangle-xmark"></i></h2>
+        </button>
     </div>
 </template>
 
@@ -170,4 +187,24 @@ a:hover {
     border-radius: 5px;
     padding: 1rem;
 }
+
+.overlay {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.837);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+}
+
+input {
+    width: 1200px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.btn-close {}
 </style>
